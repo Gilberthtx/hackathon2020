@@ -1,0 +1,43 @@
+form{
+    margin: 0px auto 0px auto;
+    padding: 110px 15px 40px 15px;
+    width: 90%;
+    max-width: 350px;
+    font-family: 'Alata', sans-serif;
+}
+.container{
+    width: 100%;
+    max-width: 350px;
+}
+input{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 0 0 20px;
+    border-style: solid;
+    border-color: #EBEDEF;
+    border-width:2px;
+    border-radius: 8px;
+    color: #424949;
+}
+input:focus {
+    color: #424949;
+}
+.title {
+    color:#424949;
+    font-family: 'Alata', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.register-button{
+    font-size: 11px;
+    width: 100%;
+    font-family: 'Alata', sans-serif;
+}
+.sign-in-button{
+    font-size: 11px;
+    width: 100%;
+    font-family: 'Alata', sans-serif;
+}
+.acc-button{
+    font-family: 'Alata', sans-serif !important;
+}

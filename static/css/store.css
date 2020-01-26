@@ -1,0 +1,143 @@
+h1 {
+color: black;
+
+}
+.payment-button{
+    text-align: center;
+    font-family: 'Alata', sans-serif;
+    margin: 10px auto 20px auto;
+
+}
+.payment{
+    display: none;
+    position: fixed;
+    width: 80vw;
+    margin: 10vh 10vw;
+    background-color: grey;
+    z-index: 1010 !important;
+    opacity: .97;
+    padding: 10px;
+}
+.inside-cart{
+    width: 100%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 25% 35% 15% 25%;
+    text-align: left;
+    background-color: white;
+}
+.form-text{
+    color: white;
+    font-size: 14px;
+    padding: 20px 0px;
+    margin: 0px;
+    font-family: 'Alata', sans-serif;
+}
+.cart-img{
+    width: 100%;
+    background-color: white;
+}
+.cart{
+    background-color: white;
+}
+.btn-remove{
+    width: 100%;
+    height: 35px;
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+    text-align: center;
+    padding: 2px;
+}
+.cart-item-price{
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+}
+.cart-items{
+    background-color: white !important;
+}
+.cart-item-title{
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+}
+.store-container{
+    margin-top: 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+}
+.top-container{
+    text-align: right;
+}
+.checkout{
+    display: none;
+    position: fixed;
+    right: 45px;
+    top: 110px;
+    background-color: white;
+    width: 80%;
+    padding: 20px;
+    border: .2px solid grey;
+    z-index: 1000 !important;
+}
+.cart-items{
+    width: 100%;
+    background-color: orange;
+}
+.totalPrice{
+    font-size: 15px;
+    font-family: 'Alata', sans-serif;
+}
+.check-out-button{
+   font-family: 'Alata', sans-serif;
+}
+.title{
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    margin: 10px 0px 10px 20px;
+    padding: 0px;
+}
+.shopping-button{
+    font-size: 30px;
+    margin-right: 10px;
+}
+.item{
+    text-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.meal-title{
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.item-price{
+    font-size: 20px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.addButton{
+    display: block;
+    font-size: 20px;
+    padding: 7.5px 20px !important;
+    font-family: 'Alata', sans-serif;
+    margin: 10px auto 0px auto;
+}
+.item-images{
+    width: 60%;
+    margin: 10px 20%;
+}
+.drink-container{
+    width: 40%;
+    margin: 10px 30%;
+}
+.drink-choice{
+    font-size: 15px;
+    font-family: 'Alata', sans-serif;
+    margin: 10px 0px;
+}

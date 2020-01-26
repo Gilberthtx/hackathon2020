@@ -1,0 +1,35 @@
+{% extends 'register.html' %}
+
+<!-- title for page -->
+{% block title %}Flights{% endblock %}
+
+<!-- add to head -->
+{% block head %}
+    <!-- css for this page -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flights.css')}}">
+{% endblock %}
+
+<!-- content to add to layout -->
+{% block content %}
+    <h1 class="flight-title text-center">Flights</h1>
+    <p class="flight-title-date text-center">{{ date }}</p>
+    <p class="flight-title-symbols text-center">{{ flight_data[0][1][0] }} - {{ flight_data[0][2][0] }}</p>
+    {% for x in flight_data %}
+    <div class="flight-container shadow">
+        <div>
+            <p class="flight-number-label">Flight Number:</p>
+            <p class="flight-number"><strong>{{ x[0] }}</strong></p>
+        </div>
+        <div class="text-center">
+            <p class="flight-hours">{{ x[5] }} - {{ x[6] }}</p>
+        </div>
+        <div class="text-center">
+            <p class="flight-duration">{{ x[4][0] }}h {{ x[4][1] }}m</p>
+            <p class="flight-symbols"><small><strong>{{ x[1][0] }} - {{ x[2][0] }}</strong></small></p>
+        </div>
+        <div class=text-center">
+            <a href="/{{x[0]}}/{{date}}/{{x[1][0]}}/{{x[2][0]}}/{{x[5]}}/{{x[6]}}" class="navbar-toggler flight-add text-success"><i class="fas fa-plus-circle"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,87 @@
+.account-container{
+    margin: 110px 0% 0px 0%;
+    width: 100%;
+}
+.account-sub-title{
+    font-size: 18px;
+    font-family: 'Alata', sans-serif;
+    margin: 25px 0px 0px 5%;
+}
+.account-title{
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    margin-left: 5%;
+}
+.flight-title{
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    margin: 110px 0px 10px 0px;
+    padding: 0px;
+}
+.flight-title-date{
+    font-size: 15px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-title-symbols{
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-container{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 27% 33% 25% 15%;
+    width: 90%;
+    margin: 20px auto;
+    grid-gap: 5px 0px;
+}
+.flight-container:hover{
+    background-color: #F2F4F4;
+}
+.flight-number-label{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-number{
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-symbols{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 10px 0px 0px 0px;
+}
+.flight-remove{
+    font-size: 30px !important;
+}
+.flight-remove:hover{
+    color: #19682B !important;
+}
+.flight-remove:active{
+    text-decoration: none;
+    border: 0px;
+}
+.flight-hours{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 10px 0px 0px 0px;
+    margin: 0px;
+}
+.go-button{
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+.go-btn{
+    font-family: 'Alata', sans-serif;
+    width: 75%;
+    margin: auto 12.5%;
+}

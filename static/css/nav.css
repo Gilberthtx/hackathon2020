@@ -1,0 +1,140 @@
+/* Extra small devices (portrait phones, less than 576px) */
+/* MOBILE NAV BAR */
+.nav-mobile-container{
+    width: 100%;
+    height: 55px;
+    display: grid;
+    position: fixed;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto;
+    grid-gap: 0px 0px;
+    background-color: #AF1E2D;
+    z-index: 1000 !important;
+}
+.mobile-brand-container{
+    width: 100%;
+    padding-top: 10px;
+}
+.mobile-brand-name{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    padding: 10px;
+    margin: 0px 0px 0px 5%;
+}
+.mobile-brand-name:hover{
+    text-decoration: none;
+    color: #E5E7E9;
+}
+.mobile-button-container{ width: 100%; }
+.mobile-button{
+    position: absolute;
+    right: 12.5px;
+    top: 12.5px;
+    color: white;
+}
+.nav-mobile-popup{
+    display: none;
+    position: fixed;
+    width: 80%;
+    max-width: 300px;
+    top: 0;
+    right: 0;
+    background-color: white;
+    border-left: .5px solid #E5E7E9;
+    border-bottom: .5px solid #E5E7E9;
+    padding-bottom: 20px;
+    z-index: 1005 !important;
+}
+.mobile-button-close-container{ padding: 20px 0px; }
+.mobile-close-button{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.mobile-nav-link{
+    display: block;
+    width: 75%;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 10px 17.5% 10px 7.5%;
+    padding: 7.5px 10px;
+    color: black;
+    font-family: 'Alata', sans-serif;
+}
+.mobile-nav-link:hover{
+    text-decoration: none;
+    color: black;
+}
+.mobile-line{
+    width: 85%;
+    margin: auto;
+}
+.mobile-signin-buttons{
+    display: block !important;
+    text-align: center;
+    margin: 20px auto 0px auto;
+    width: 80px;
+    padding: 15px;
+}
+.mobile-register-buttons{
+    display: block !important;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    width: 150px;
+    padding: 15px;
+}
+/* END MOBILE NAV BAR */
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /* MOBILE NAV BAR */
+    .nav-mobile-container{
+        height: 65px;
+        grid-template-columns: 75% 25%;
+    }
+    .mobile-brand-container{padding-top: 15px; }
+    .mobile-brand-name{
+        font-size: 25px;
+        padding: 15px;
+    }
+    .mobile-button{
+        right: 15px;
+        top: 15px;
+        font-size: 25px;
+    }
+    .nav-mobile-popup{
+        max-width: 350px;
+        border-left: .7px solid #E5E7E9;
+        border-bottom: .7px solid #E5E7E9;
+        padding-bottom: 25px;
+    }
+    .mobile-button-close-container{ padding: 30px 0px; }
+    .mobile-close-button{
+        right: 16px;
+        top: 16px;
+        font-size: 25px;
+    }
+    .mobile-nav-link{
+        font-size: 17px;
+        font-weight: 400;
+        margin: 11px 16% 11px 9%;
+        padding: 9px 12px;
+    }
+    .mobile-signin-buttons{
+        display: block;
+        text-align: center;
+        margin: 27.5px auto 0px auto;
+    }
+    .mobile-register-buttons{
+        display: block;
+        text-align: center;
+        margin: 17.5px auto 17.5px auto;
+    }
+    /* END MOBILE NAV BAR */
+}

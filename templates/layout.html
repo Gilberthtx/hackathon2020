@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- title -->
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- css for this page -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nav.css')}}">
+
+         <!-- fonts for this page -->
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+
+        <!-- icons for this page -->
+        <script src="https://kit.fontawesome.com/486a6f6d4c.js" crossorigin="anonymous"></script>
+
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- bootstrap js -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <!-- nav-mobile-container -->
+        <div class="nav-mobile-container shadow">
+            <div class="mobile-brand-container">
+                 <a class="mobile-brand-name" href="{{ url_for('search')}}">AirDash</a>
+            </div>
+            <div class="mobile-button-container">
+                <button class="mobile-button navbar-toggler"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div class="nav-mobile-popup shadow-lg">
+            <div class="mobile-button-close-container">
+                <button class="mobile-close-button navbar-toggler"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="mobile-link-container">
+                <a class="mobile-nav-link" href="{{ url_for('account') }}">Account</a>
+                <hr class="mobile-line">
+                <a class="mobile-nav-link" href="{{ url_for('search') }}">Flights</a>
+                <hr class="mobile-line">
+                <a class="mobile-nav-link" href="{{ url_for('store') }}">Food Service</a>
+                <hr class="mobile-line">
+                <a type="button" class="btn btn-sm btn-success mobile-signin-buttons" href="{{ url_for('login') }}">Sign In</a>
+                <a type="button" class="btn btn-sm btn-info mobile-register-buttons" href="{{ url_for('register') }}">Create An Account</a>
+            </div>
+        </div>
+
+        <!-- additional content -->
+        {% block content %}{% endblock %}
+
+        <!-- javascript for this page -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/nav.js')}}"></script>
+    </body>
+</html>

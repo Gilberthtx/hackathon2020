@@ -1,0 +1,293 @@
+{% extends 'register.html' %}
+<!-- title for page -->
+{% block title %}Food Menu{% endblock %}
+
+<!-- add to head -->
+{% block head %}
+    <!-- css for this page -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/store.css')}}">
+{% endblock %}
+
+<!-- content to add to layout -->
+{% block content %}
+    <div class="store-container">
+        <div class="top-container">
+            <button id="shoppingCar" class="navbar-toggler shopping-button"><i class="fas fa-shopping-cart"></i></button>
+            <div class="checkout shadow-lg">
+                <div class="cart">
+                    <div class="cart-items"></div>
+                    <div class="totalPrice">The Total Cost: $0</div>
+                    <button type="button" class="check-out-button btn btn-success">Check Out!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment shadow-lg">
+            <forms>
+                <p class="form-text">Credit Card Number</p>
+                <input class="form-control" type="text" name="creditCardNumber">
+                <p class="form-text">Name on Card</p>
+                <input class="form-control" type="text" name="Name on Card">
+                <p class="form-text">Expiration Date</p>
+                <input class="form-control" type="text" name="Expiration Date">
+                <p class="form-text">CVV</p>
+                <input class="form-control" type="text" name="CVV">
+                <button class="btn btn-success payment-button">Submit Payment</button>
+            </forms>
+        </div>
+
+        <h1 class="title">In Flight Food Service</h1>
+
+        <div>
+            <div style="margin-top: 20px;" align="center" class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menu
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id="meals" onclick="typeSelector()" class="dropdown-item" href="#">Meals</a>
+                    <a id="drinks" onclick="typeSelector()" class="dropdown-item" href="#">Drinks</a>
+                    <a id="snacks" onclick="typeSelector()" class="dropdown-item" href="#">Snacks</a>
+                </div>
+            </div>
+            <div class="drink-container">
+                <a class="drink-choice btn btn-outline-dark" id="alcoholic" style="display:none;" role="button" onclick="typeSelector()" href="#">Alcoholic</a>
+                <a class="drink-choice btn btn-outline-dark" id="non-alcoholic" style="display:none;" role="button" onclick="typeSelector()" href="#">Non-Alcoholic</a>
+            </div>
+        </div>
+
+        <div style="display:none;" id="featuredItems" class="carousel slide">
+            <div style="margin-top:100px;" id="carousel1" class="carousel slide" data-ride="carousel">
+                <div align="center" class="carousel-inner">
+                    <div class="carousel-item active">
+                        <input id="featuredItem1" onclick="window.location.href = 'drinkMenu.html'" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/drinks.jpg')}}" alt="First slide">
+                    </div>
+                    <button class="addButton btn btn-outline-success">Add</button>
+                    <div class="carousel-item">
+                        <input id="featuredItem2"  type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/meals.jpg')}}" alt="Second slide">
+                    </div>
+                    <button class="addButton btn btn-outline-success">Add</button>
+                    <div class="carousel-item">
+                        <input id="featuredItem3" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/snacks.jpg')}}" alt="Third slide">
+                    </div>
+                    <button class="addButton btn btn-outline-success">Add</button>
+                </div>
+                <a class="carousel-control-prev" href="#featuredItems" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#featuredItems" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="display:none;"  id="mealSlider" class="carousel slide">
+        <div style="margin-top:10px;" id="carousel2" class="carousel slide" data-ride="carousel">
+            <div align="center" class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="item">
+                        <input id="itemSrc" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/meal1.PNG')}}" alt="First slide">
+                        <h1 class="meal-title">Chicken & Artichoke Wrap</h1>
+                        <span class="item-price">$10</span>
+                        <button id="Chicken & Artichoke Wrap" class="addButton btn btn-outline-success" >Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="meal2" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/meal2.PNG')}}" alt="Second slide">
+                        <h1 class="meal-title">Grüben</h1>
+                        <span class="item-price">$12</span>
+                        <button id="Gruben" class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="meal3" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/meal3.PNG')}}" alt="Third slide">
+                        <h1 class="meal-title">Breakfast Sandwich</h1>
+                        <span class="item-price">$8</span>
+                        <button id="Breakfast Sandwich" class="addButton btn btn-outline-success">Add</button>
+
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#mealSlider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#mealSlider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div style="display: none;" id="alcoholicDrinkSlider" class="carousel slide">
+        <div style="margin-top:10px;" id="carousel3" class="carousel slide" data-ride="carousel">
+            <div align="center" class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="item">
+                        <input id="drink1" onclick="window.location.href = 'drinkMenu.html'" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/wine.jpg')}}" alt="First slide">
+                        <span class="meal-title">Wine</span>
+                        <span class="item-price">$7</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="drink2" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/titos.jpg')}}" alt="Second slide">
+                        <span class="meal-title">Titos</span>
+                        <span class="item-price">$6</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="drink3" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/budlight.jpg')}}" alt="Third slide">
+                        <span class="meal-title">Budlight Can</span>
+                        <span class="item-price">$5</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#alcoholicDrinkSlider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#alcoholicDrinkSlider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div style="display:none;"  id="snackSlider" class="carousel slide">
+        <div style="margin-top:10px;"  id="carousel4" class="carousel slide" data-ride="carousel">
+            <div align="center" class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="item">
+                        <input id="snack1" onclick="window.location.href = 'drinkMenu.html'" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/snack1.PNG')}}" alt="First slide">
+                        <span class="meal-title">Hummus Duo Box</span>
+                        <span class="item-price">$9</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="snack2"  type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/snack2.PNG')}}" alt="Second slide">
+                        <span class="meal-title">Cheese & Fruit Platter</span>
+                        <span class="item-price">$7</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                    <input id="snack3" type="image" align="center" class="item-images" src="{{ url_for('static', filename='images/snack3.PNG')}}" alt="Third slide">
+                    <span class="meal-title">Breakfast Platter</span>
+                    <span class="item-price">$10</span>
+                    <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#snackSlider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#snackSlider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div style="display:none;"  id="nonAlcoholicDrinkSlider" class="carousel slide">
+        <div style="margin-top:10px;" id="carousel5" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="item">
+                        <input id="nonAlcoholicDrink1"  type="image" class="item-images" src="{{ url_for('static', filename='images/canadaDryCan.jpg')}}" alt="First slide">
+                        <span class="menu-title">Canada Dry Can</span>
+                        <span class="item-price">$4</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="nonAlcoholicDrink2"  type="image" class="item-images" src="{{ url_for('static', filename='images/cokeCan.jpg')}}" alt="Second slide">
+                        <span class="menu-title">Coke-a-Cola Can</span>
+                        <span class="item-price">$4</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="item">
+                        <input id="nonAlcoholicDrink3" type="image" class="item-images" src="{{ url_for('static', filename='images/sierraMistCan.jpg')}}" alt="Third slide">
+                        <span class="menu-title">Sierra Mist Can</span>
+                        <span class="item-price">$4</span>
+                        <button class="addButton btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#nonAlcoholicDrinkSlider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#nonAlcoholicDrinkSlider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function typeSelector() {
+            $(document).ready(function() {
+                $('#meals').on('click', function() {
+                   $("#mealSlider").css("display", "block");
+                   $("#featuredItems").css("display", "none");
+                   $("#alcoholicalcoholicDrinkSlider").css("display", "none");
+                   $("#snackSlider").css("display", "none");
+                   $("#alcoholic").css("display", "none");
+                   $("#non-alcoholic").css("display", "none");
+                   $("#nonAlcoholicDrinkSlider").css("display", "none");
+                   $("#alcoholicDrinkSlider").css("display", "none");
+                });
+                $('#drinks').on('click', function() {
+                   $("#mealSlider").css("display", "none");
+                   $("#featuredItems").css("display", "none");
+                   $("#alcoholicDrinkSlider").css("display", "none");
+                   $("#alcoholic").css("display", "block");
+                   $("#non-alcoholic").css("display", "block");
+                   $("#snackSlider").css("display", "none");
+                   $("#nonAlcoholicDrinkSlider").css("display", "none");
+                });
+                $('#snacks').on('click', function() {
+                   $("#mealSlider").css("display", "none");
+                   $("#featuredItems").css("display", "none");
+                   $("#alcoholicDrinkSlider").css("display", "none");
+                   $("#snackSlider").css("display", "block");
+                   $("#alcoholic").css("display", "none");
+                   $("#non-alcoholic").css("display", "none");
+                   $("#nonAlcoholicDrinkSlider").css("display", "none");
+                });
+                $('#alcoholic').on('click', function() {
+                   $("#alcoholicDrinkSlider").css("display", "block");
+                   $("#alcoholic").css("display", "none");
+                   $("#non-alcoholic").css("display", "none");
+                });
+                $('#non-alcoholic').on('click', function() {
+                   $("#nonAlcoholicDrinkSlider").css("display", "block");
+                   $("#alcoholic").css("display", "none");
+                   $("#non-alcoholic").css("display", "none");
+                });
+
+            });
+        }
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/store.js')}}"></script>
+{% endblock %}
+
+

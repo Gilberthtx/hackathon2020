@@ -1,0 +1,82 @@
+form{
+    font-size: 10px;
+    font-family: 'Alata', sans-serif;
+}
+.flight-popup{
+    position: absolute;
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    margin: 0px 10%;
+
+}
+.flight-title{
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    margin: 110px 0px 10px 0px;
+    padding: 0px;
+}
+.flight-title-date{
+    font-size: 15px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-title-symbols{
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-container{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 27% 33% 25% 15%;
+    width: 90%;
+    margin: 50px auto;
+    grid-gap: 5px 0px;
+}
+.flight-container:hover{
+    background-color: #F2F4F4;
+}
+.flight-number-label{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-number{
+    font-size: 13px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-symbols{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.flight-duration{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 0px;
+
+}
+.flight-add{
+    font-size: 30px !important;
+}
+.flight-add:hover{
+    color: #19682B !important;
+}
+.flight-add:active{
+    text-decoration: none;
+    border: 0px;
+}
+.flight-hours{
+    font-size: 11px;
+    font-family: 'Alata', sans-serif;
+    padding: 0px;
+    margin: 10px 0px 0px 0px;
+}

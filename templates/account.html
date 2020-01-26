@@ -1,0 +1,39 @@
+{% extends 'register.html' %}
+<!-- title for page -->
+{% block title %}My Account{% endblock %}
+
+<!-- add to head -->
+{% block head %}
+    <!-- css for this page -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/myaccount.css')}}">
+{% endblock %}
+
+<!-- content to add to layout -->
+{% block content %}
+    <div class="account-container">
+        <h1 class="account-title">Hi, {{ name }}!</h1>
+        <div>
+            <h2 class="account-sub-title">Your Flights</h2>
+            {% for x in stream %}
+            <div class="flight-container shadow">
+                <div>
+                    <p class="flight-number-label">Flight Number:</p>
+                    <p class="flight-number"><strong>{{ x.flight_number }}</strong></p>
+                </div>
+                <div class="text-center">
+                    <p class="flight-hours">{{ x.arrival_time }} - {{ x.departure_time }}</p>
+                </div>
+                <div class="text-center">
+                    <p class="flight-symbols"><strong>{{ x.origin }} - {{ x.destination }}</strong></p>
+                </div>
+                <div class="text-center mt-1">
+                    <a href="/remove/{{x.flight_number}}" class="navbar-toggler flight-remove text-danger"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="go-button">
+                    <a href="/food" class="go-btn btn btn-outline-dark">Food Service for this Flight</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

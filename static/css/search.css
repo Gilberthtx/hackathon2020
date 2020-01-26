@@ -1,0 +1,84 @@
+.form{
+    font-family: 'Alata', sans-serif;
+}
+.form-container{
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    width: 80%;
+    margin: 110px auto 0px auto;
+    grid-gap: 30px 5%;
+}
+.date-container{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.form-labels{
+    font-family: 'Alata', sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+.search{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.loading-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000 !important;
+    background-color: white;
+}
+
+.loading{
+    margin-left: Calc(50% - 48px);
+    margin-top: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.obj{
+    width: 6px;
+    height: 40px;
+    background: #af1e2d;
+    margin: 0 3px;
+    border-radius: 10px;
+    animation: loading 0.8s infinite;
+}
+.obj:nth-child(2){
+    animation-delay: 0.1s;
+}
+.obj:nth-child(3){
+    animation-delay: 0.2s;
+}
+.obj:nth-child(4){
+    animation-delay: 0.3s;
+}
+.obj:nth-child(5){
+    animation-delay: 0.4s;
+}
+.obj:nth-child(6){
+    animation-delay: 0.5s;
+}
+.obj:nth-child(7){
+    animation-delay: 0.6s;
+}
+.obj:nth-child(8){
+    animation-delay: 0.7s;
+}
+@keyframes loading {
+    0%{
+        height: 0;
+    }
+    50%{
+        height: 40px;
+    }
+    100%{
+        height: 0;
+    }
+}
